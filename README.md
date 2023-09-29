@@ -1,12 +1,8 @@
-# WebAuthn Basic Client/Server Example (go)
+# WebAuthn basic Login and Register example
 
-This library implements a simple, basic WebAuthn client and server based on [duo's WebAuthn implementation](https://github.com/duo-labs/webauthn). The code pulls inspiration from [duo's WebAuthn example implementation](https://github.com/duo-labs/webauthn.io). This example is NOT meant to be used in production, but rather as an introduction to WebAuthn as well as a more quick-and-dirty, stripped down version of [webauthn.io](https://webauthn.io/).
+This is a modification of the [WebAuthn Basic Client/Server Example (go)](https://github.com/hbolimovsky/webauthn-example) proyect. This version makes use of the Gin Web Framwork.
 
-## Blog Post
-
-You can check it out [here](https://www.herbie.dev/blog/webauthn-basic-web-client-server/)
-
-## Quickstart
+## Set-up
 
 ### Download
 
@@ -14,7 +10,7 @@ Download the project (i.e. via `git clone` or `go get`) and navigate to the proj
 
 ### Start
 
-Start the server by compiling and running the code. It should look something like this:
+Start the server by compiling and running the code:
 
 ```bash
 $ go run .
@@ -25,30 +21,16 @@ $ go run .
 
 #### Spin Up
 
-Fire up a web browser and go to [localhost:8080](http://localhost:8080). You should see something like this:
+Go to [localhost:8080](http://localhost:8080).
 
-![webpage_example.png](webpage_example.png)
-
-Note: as of this writing, not all web browsers support WebAuthn - you'll receive a warning if the browser you're using doesn't.
+If the web browser you are using doesn't support WebAuthn switch to another one like Chrome or Safari.
 
 #### Register
 
-To test that the demo is working properly, enter an email like `foo@bar.com` and press the `Register` button. You should be prompted to gesture (i.e. tap, scan finger) to some authenticator. It should look something like this:
+To test that the demo is working properly, enter an email like `foo@bar.com` and press the `Register` button. You should be prompted to use some authenticator like fingerprint, pin...
 
-![auth_example.png](auth_example.png)
-
-Upon successful registration, you'll see an alert saying you successfully registered, similar to this:
-
-![success_register.png](success_register.png)
+Upon successful registration, you'll see an alert saying you successfully registered.
 
 #### Login
 
 Press the login button and follow the instructions. The login process is identical (user side) to the registration process.
-
-## Extra
-
-### WebAuthn BLE Support In Chrome
-
-In your Chrome broswer go to `chrome://flags/` and search for 'web auth', then set 'Web Authentication API BLE support' and 'Web Authentication caBLE support' to `enabled`
-
-![chrome_ble_flags.png](chrome_ble_flags.png)
